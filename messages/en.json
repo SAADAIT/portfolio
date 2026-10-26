@@ -1,0 +1,82 @@
+{
+    "Meta": {
+        "title": "Saad Ait Bendra · Software Engineer, IoT & Data",
+        "description": "Polytech Nantes 2026 engineer (fullstack development, embedded IoT systems, Data Science), currently in a Master's at IGR Rennes. Available for a full-time position from March 2027."
+    },
+    "A11y": {
+        "skipLink": "Skip to main content"
+    },
+    "Nav": {
+        "about": "About",
+        "experience": "Experience",
+        "projects": "Projects",
+        "skills": "Skills",
+        "education": "Education",
+        "contact": "Contact",
+        "downloadCv": "Download my CV",
+        "cvShort": "CV",
+        "home": "Back to top",
+        "mainNav": "Main navigation",
+        "mobileNav": "Mobile navigation",
+        "openMenu": "Open menu",
+        "closeMenu": "Close menu",
+        "toggleTheme": "Toggle theme",
+        "switchLanguage": "Switch language"
+    },
+    "Social": {
+        "github": "GitHub profile",
+        "linkedin": "LinkedIn profile",
+        "email": "Send an email"
+    },
+    "Hero": {
+        "badge": "Available for a full-time role – March 2027",
+        "role": "Software Engineer · IoT & Data",
+        "tagline": "From sensor to interface, I build fullstack, embedded and data solutions for innovative technology projects.",
+        "ctaProjects": "View my projects",
+        "ctaContact": "Get in touch",
+        "scroll": "Go to the About section"
+    },
+    "About": {
+        "eyebrow": "About",
+        "title": "Software engineer, between code, sensors and data.",
+        "p1": "I graduated as a computer science engineer from Polytech Nantes (class of 2026) and am currently completing a Master 2 MAE EI at IGR Rennes, where I complement my technical expertise with training in entrepreneurship and innovation.",
+        "p2": "I master fullstack software development, embedded systems (IoT) and Data Science. Most recently, I designed an industrial edge-computing IoT solution on Raspberry Pi 5 that estimates animal weight through 3D vision.",
+        "p3": "I am looking for my first permanent position (CDI) starting March 2027, to contribute to the design of innovative technology projects, drawing on my project management and innovation skills.",
+        "pillars": {
+            "fullstack": {
+                "title": "Fullstack",
+                "text": "React, TypeScript, NestJS, Prisma and PostgreSQL to build complete web applications."
+            },
+            "iot": {
+                "title": "IoT & Embedded",
+                "text": "Edge computing on Raspberry Pi 5, STM32, LoRa, MQTT, 3D vision and containerized monitoring."
+            },
+            "data": {
+                "title": "Data & AI",
+                "text": "Machine Learning with Python, Pandas and Scikit-learn: scoring, prediction and decision support."
+            }
+        },
+        "stats": {
+            "experiences": "Experiences",
+            "projects": "Projects",
+            "domains": "Areas of expertise",
+            "languages": "Languages"
+        }
+    },
+    "Experience": {
+        "eyebrow": "Experience",
+        "title": "Professional experience & R&D",
+        "technologies": "Technologies used"
+    },
+    "Footer": {
+        "builtWith": "Built with Next.js, Tailwind CSS and React Three Fiber.",
+        "navLabel": "Footer navigation",
+        "backToTop": "Back to top",
+        "copyright": "© {year} {name}. All rights reserved."
+    },
+    "NotFound": {
+        "title": "Page not found",
+        "description": "The page you are looking for doesn't exist or has been moved.",
+        "back": "Back to home"
+    }
+}

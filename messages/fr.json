@@ -1,0 +1,82 @@
+{
+    "Meta": {
+        "title": "Saad Ait Bendra · Ingénieur logiciel IoT & Data",
+        "description": "Ingénieur Polytech Nantes 2026 (développement fullstack, systèmes embarqués IoT, Data Science), en Master 2 à l'IGR Rennes. Disponible pour un CDI à partir de mars 2027."
+    },
+    "A11y": {
+        "skipLink": "Aller au contenu principal"
+    },
+    "Nav": {
+        "about": "À propos",
+        "experience": "Expériences",
+        "projects": "Projets",
+        "skills": "Compétences",
+        "education": "Formation",
+        "contact": "Contact",
+        "downloadCv": "Télécharger mon CV",
+        "cvShort": "CV",
+        "home": "Retour en haut de la page",
+        "mainNav": "Navigation principale",
+        "mobileNav": "Navigation mobile",
+        "openMenu": "Ouvrir le menu",
+        "closeMenu": "Fermer le menu",
+        "toggleTheme": "Changer de thème",
+        "switchLanguage": "Changer de langue"
+    },
+    "Social": {
+        "github": "Profil GitHub",
+        "linkedin": "Profil LinkedIn",
+        "email": "Envoyer un email"
+    },
+    "Hero": {
+        "badge": "Disponible pour un CDI – mars 2027",
+        "role": "Ingénieur logiciel · IoT & Data",
+        "tagline": "Du capteur à l'interface, je conçois des solutions fullstack, embarquées et data pour des projets technologiques innovants.",
+        "ctaProjects": "Voir mes projets",
+        "ctaContact": "Me contacter",
+        "scroll": "Aller à la section À propos"
+    },
+    "About": {
+        "eyebrow": "À propos",
+        "title": "Ingénieur logiciel, entre code, capteurs et données.",
+        "p1": "Ingénieur diplômé en informatique de Polytech Nantes (promotion 2026), je suis actuellement en Master 2 MAE EI à l'IGR Rennes, où je complète mon expertise technique par une formation en entrepreneuriat et innovation.",
+        "p2": "Je maîtrise le développement logiciel fullstack, les systèmes embarqués (IoT) et la Data Science. J'ai notamment conçu une solution IoT industrielle en edge computing sur Raspberry Pi 5 pour l'estimation de pesée d'animaux par vision 3D.",
+        "p3": "Je cherche mon premier CDI à partir de mars 2027, afin de contribuer à la conception de projets technologiques innovants, en mobilisant mes compétences en gestion de projet et en innovation.",
+        "pillars": {
+            "fullstack": {
+                "title": "Fullstack",
+                "text": "React, TypeScript, NestJS, Prisma et PostgreSQL pour concevoir des applications web complètes."
+            },
+            "iot": {
+                "title": "IoT & Embarqué",
+                "text": "Edge computing sur Raspberry Pi 5, STM32, LoRa, MQTT, vision 3D et monitoring conteneurisé."
+            },
+            "data": {
+                "title": "Data & IA",
+                "text": "Machine Learning avec Python, Pandas et Scikit-learn : scoring, prédiction et aide à la décision."
+            }
+        },
+        "stats": {
+            "experiences": "Expériences",
+            "projects": "Projets",
+            "domains": "Domaines d'expertise",
+            "languages": "Langues"
+        }
+    },
+    "Experience": {
+        "eyebrow": "Expériences",
+        "title": "Parcours professionnel & R&D",
+        "technologies": "Technologies utilisées"
+    },
+    "Footer": {
+        "builtWith": "Conçu avec Next.js, Tailwind CSS et React Three Fiber.",
+        "navLabel": "Navigation du pied de page",
+        "backToTop": "Retour en haut",
+        "copyright": "© {year} {name}. Tous droits réservés."
+    },
+    "NotFound": {
+        "title": "Page introuvable",
+        "description": "La page que vous cherchez n'existe pas ou a été déplacée.",
+        "back": "Retour à l'accueil"
+    }
+}
