@@ -1,15 +1,11 @@
 import type { MetadataRoute } from "next";
 
-const siteUrl = (
-  process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"
-).replace(/\/$/, "");
-
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: `${siteUrl}/sitemap.xml`,
+    sitemap: "portfolio-seven-phi-ow4gckcb58.vercel.app", // TODO: replace with your real URL
   };
 }
