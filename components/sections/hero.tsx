@@ -33,15 +33,6 @@ export function Hero() {
 
       <div className="mx-auto w-full max-w-6xl px-6">
         <div className="max-w-3xl">
-          <Reveal>
-            <p className="glass inline-flex items-center gap-2.5 rounded-full px-4 py-1.5 text-sm text-muted">
-              <span className="relative flex size-2">
-                <span className="absolute inline-flex size-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-                <span className="relative inline-flex size-2 rounded-full bg-emerald-400" />
-              </span>
-              {t("badge")}
-            </p>
-          </Reveal>
 
           {/* No entrance animation on the h1: it is the LCP element */}
           <h1
