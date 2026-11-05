@@ -10,7 +10,7 @@ export const siteConfig = {
   email: "saadaitbendrafr@gmail.com",
   // TODO: replace with your real profile URLs
   github: "https://github.com/TODO",
-  linkedin: "https://www.linkedin.com/in/TODO",
+  linkedin: "https://www.linkedin.com/in/saad-ait-bendra-5830061b7/",
   // TODO: put your real CV in /public/cv.pdf
   cvPath: "/cv.pdf",
   cvFileName: "CV-Saad-Ait-Bendra.pdf",
