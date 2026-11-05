@@ -1,29 +1,41 @@
+import type { LucideIcon } from "lucide-react";
+import type { ReactNode } from "react";
+
 import { Reveal } from "@/components/ui/reveal";
+import { SectionBadge } from "@/components/ui/section-badge";
 import { cn } from "@/lib/utils";
 
 type SectionHeadingProps = {
   /** Id of the h2, referenced by the section's aria-labelledby. */
   id: string;
-  eyebrow: string;
-  title: string;
+  badge: string;
+  icon: LucideIcon;
+  /** Use <span className="text-gradient"> around the highlighted words. */
+  title: ReactNode;
   description?: string;
+  align?: "center" | "left";
   className?: string;
 };
 
 export function SectionHeading({
   id,
-  eyebrow,
+  badge,
+  icon,
   title,
   description,
+  align = "center",
   className,
 }: SectionHeadingProps) {
   return (
-    <Reveal className={cn("mb-12 max-w-2xl sm:mb-16", className)}>
-      <p className="mb-4 flex items-center gap-3 font-mono text-xs uppercase tracking-[0.2em] text-accent">
-        <span aria-hidden className="bg-accent-gradient h-px w-10" />
-        {eyebrow}
-      </p>
-      <h2 id={id} className="text-3xl font-semibold sm:text-5xl">
+    <Reveal
+      className={cn(
+        "max-w-2xl",
+        align === "center" ? "mx-auto text-center" : "text-left",
+        className,
+      )}
+    >
+      <SectionBadge icon={icon}>{badge}</SectionBadge>
+      <h2 id={id} className="mt-5 text-4xl font-extrabold sm:text-5xl">
         {title}
       </h2>
       {description ? (

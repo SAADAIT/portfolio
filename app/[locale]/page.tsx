@@ -1,11 +1,9 @@
 import { setRequestLocale } from "next-intl/server";
 
-import { Footer } from "@/components/layout/footer";
 import { Navbar } from "@/components/layout/navbar";
-import { About } from "@/components/sections/about";
-import { Experience } from "@/components/sections/experience";
 import { Hero } from "@/components/sections/hero";
-import { CursorGlow } from "@/components/ui/cursor-glow";
+import { Services } from "@/components/sections/services";
+import { Skills } from "@/components/sections/skills";
 
 type PageProps = {
   params: Promise<{ locale: string }>;
@@ -17,15 +15,13 @@ export default async function HomePage({ params }: PageProps) {
 
   return (
     <>
-      <CursorGlow />
       <Navbar />
       <main id="main">
         <Hero />
-        <About />
-        <Experience />
-        {/* Part 3: Projects, Skills, Education, Languages, Contact */}
+        <Services />
+        <Skills />
+        {/* Part 2: Projects, Journey, Hobbies, Contact */}
       </main>
-      <Footer />
     </>
   );
 }

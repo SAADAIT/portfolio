@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Bricolage_Grotesque, Inter } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import { notFound } from "next/navigation";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import {
@@ -13,20 +13,12 @@ import type { ReactNode } from "react";
 
 import "../globals.css";
 
-import { ThemeProvider } from "@/components/layout/theme-provider";
 import { siteConfig } from "@/data/site";
 import { routing } from "@/i18n/routing";
-import { cn } from "@/lib/utils";
 
-const inter = Inter({
+const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-});
-
-const bricolage = Bricolage_Grotesque({
-  subsets: ["latin"],
-  variable: "--font-bricolage",
+  variable: "--font-jakarta",
   display: "swap",
 });
 
@@ -40,10 +32,7 @@ export function generateStaticParams() {
 }
 
 export const viewport: Viewport = {
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#fafafc" },
-    { media: "(prefers-color-scheme: dark)", color: "#0a0a0f" },
-  ],
+  themeColor: "#1c1024",
   width: "device-width",
   initialScale: 1,
 };
@@ -111,30 +100,18 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
   const t = await getTranslations("A11y");
 
   return (
-    <html
-      lang={locale}
-      suppressHydrationWarning
-      className={cn(inter.variable, bricolage.variable)}
-    >
+    <html lang={locale} className={jakarta.variable}>
       <body className="min-h-dvh bg-background font-sans text-foreground antialiased">
-        <ThemeProvider>
-          <NextIntlClientProvider messages={messages}>
-            <a
-              href="#main"
-              className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-foreground focus:px-4 focus:py-2 focus:text-background"
-            >
-              {t("skipLink")}
-            </a>
+        <NextIntlClientProvider messages={messages}>
+          <a
+            href="#main"
+            className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-foreground focus:px-4 focus:py-2 focus:text-background"
+          >
+            {t("skipLink")}
+          </a>
 
-            {/* Film grain overlay */}
-            <div
-              aria-hidden
-              className="bg-noise pointer-events-none fixed inset-0 -z-10"
-            />
-
-            {children}
-          </NextIntlClientProvider>
-        </ThemeProvider>
+          {children}
+        </NextIntlClientProvider>
 
         <Analytics />
         <SpeedInsights />

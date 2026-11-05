@@ -1,28 +1,23 @@
 "use client";
 
-import { Download } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 
 import { buttonStyles } from "@/components/ui/button";
 import { LocaleSwitcher } from "@/components/ui/locale-switcher";
-import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { navSections, siteConfig } from "@/data/site";
 import { cn } from "@/lib/utils";
 
 export function Navbar() {
   const t = useTranslations("Nav");
-  const [active, setActive] = useState<string>("");
+  const [active, setActive] = useState<string>("home");
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
-  // Header background + reset of the active link at the very top
+  // Header background once the page is scrolled
   useEffect(() => {
-    const onScroll = () => {
-      setScrolled(window.scrollY > 12);
-      if (window.scrollY < 120) setActive("");
-    };
+    const onScroll = () => setScrolled(window.scrollY > 12);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -57,67 +52,60 @@ export function Navbar() {
     return () => window.removeEventListener("keydown", onKeyDown);
   }, [open]);
 
-  const cvLink = (
-    <a
-      href={siteConfig.cvPath}
-      download={siteConfig.cvFileName}
-      aria-label={t("downloadCv")}
-      className={buttonStyles("primary", "px-4 py-2")}
-    >
-      <Download aria-hidden className="size-4" />
-      <span className="hidden xl:inline">{t("downloadCv")}</span>
-      <span className="xl:hidden">{t("cvShort")}</span>
-    </a>
-  );
-
   return (
     <header
       className={cn(
         "fixed inset-x-0 top-0 z-50 border-b transition-[background-color,border-color,backdrop-filter] duration-300",
         scrolled || open
-          ? "border-border bg-background/70 backdrop-blur-xl"
+          ? "border-border bg-background/80 backdrop-blur-xl"
           : "border-transparent",
       )}
     >
-      <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-6">
+      <div className="mx-auto flex h-[4.5rem] w-full max-w-6xl items-center justify-between gap-4 px-6">
         <a
-          href="#main"
-          aria-label={t("home")}
-          className="font-display text-xl font-semibold tracking-tight"
+          href="#home"
+          aria-label={t("homeLabel")}
+          className="text-xl font-extrabold tracking-wide uppercase"
         >
-          <span className="text-gradient">SAB</span>
+          {siteConfig.firstName}
+          <span className="text-gradient">.</span>
         </a>
 
         {/* Desktop navigation */}
-        <nav aria-label={t("mainNav")} className="hidden items-center gap-1 lg:flex">
-          {navSections.map((id) => (
-            <a
-              key={id}
-              href={`#${id}`}
-              aria-current={active === id ? "location" : undefined}
-              className={cn(
-                "relative isolate rounded-full px-3 py-1.5 text-sm transition-colors",
-                active === id
-                  ? "text-foreground"
-                  : "text-muted hover:text-foreground",
-              )}
-            >
-              {active === id && (
-                <motion.span
-                  layoutId="nav-pill"
-                  className="absolute inset-0 -z-10 rounded-full bg-foreground/10"
-                  transition={{ type: "spring", bounce: 0.2, duration: 0.5 }}
-                />
-              )}
-              {t(id)}
-            </a>
-          ))}
+        <nav aria-label={t("mainNav")} className="hidden lg:block">
+          <ul className="flex items-center gap-1">
+            {navSections.map((id) => (
+              <li key={id}>
+                <a
+                  href={`#${id}`}
+                  aria-current={active === id ? "location" : undefined}
+                  className={cn(
+                    "relative block px-3 py-2 text-sm font-medium transition-colors",
+                    active === id
+                      ? "text-accent"
+                      : "text-muted hover:text-foreground",
+                  )}
+                >
+                  {t(id)}
+                  {active === id && (
+                    <motion.span
+                      layoutId="nav-underline"
+                      aria-hidden
+                      className="bg-accent-gradient absolute inset-x-3 -bottom-px h-0.5 rounded-full"
+                      transition={{ type: "spring", bounce: 0.2, duration: 0.5 }}
+                    />
+                  )}
+                </a>
+              </li>
+            ))}
+          </ul>
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
           <LocaleSwitcher />
-          <ThemeToggle />
-          {cvLink}
+          <a href="#contact" className={buttonStyles("primary", "px-5 py-2.5")}>
+            {t("cta")}
+          </a>
         </div>
 
         {/* Animated burger */}
@@ -127,7 +115,7 @@ export function Navbar() {
           aria-expanded={open}
           aria-controls="mobile-menu"
           aria-label={open ? t("closeMenu") : t("openMenu")}
-          className="glass inline-flex size-10 flex-col items-center justify-center gap-[5px] rounded-full lg:hidden"
+          className="inline-flex size-11 flex-col items-center justify-center gap-[5px] rounded-full border border-border bg-surface lg:hidden"
         >
           <span
             className={cn(
@@ -172,7 +160,7 @@ export function Navbar() {
                   onClick={() => setOpen(false)}
                   aria-current={active === id ? "location" : undefined}
                   className={cn(
-                    "font-display rounded-lg py-2 text-3xl font-semibold tracking-tight transition-colors",
+                    "rounded-lg py-2 text-2xl font-bold transition-colors",
                     active === id ? "text-gradient" : "text-foreground",
                   )}
                 >
@@ -181,8 +169,13 @@ export function Navbar() {
               ))}
               <div className="mt-6 flex flex-wrap items-center gap-3">
                 <LocaleSwitcher />
-                <ThemeToggle />
-                {cvLink}
+                <a
+                  href="#contact"
+                  onClick={() => setOpen(false)}
+                  className={buttonStyles("primary", "px-5 py-2.5")}
+                >
+                  {t("cta")}
+                </a>
               </div>
             </nav>
           </motion.div>

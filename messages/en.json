@@ -1,26 +1,25 @@
 {
     "Meta": {
         "title": "Saad Ait Bendra · Software Engineer, IoT & Data",
-        "description": "Polytech Nantes 2026 engineer (fullstack development, embedded IoT systems, Data Science), currently in a Master's at IGR Rennes. Available for a full-time position from March 2027."
+        "description": "Polytech Nantes 2026 engineer (fullstack development, embedded IoT systems, Data Science), currently in a Master's at IGR Rennes. Discover my projects, skills and journey."
     },
     "A11y": {
         "skipLink": "Skip to main content"
     },
     "Nav": {
-        "about": "About",
-        "experience": "Experience",
-        "projects": "Projects",
+        "home": "Home",
+        "services": "Services",
         "skills": "Skills",
-        "education": "Education",
+        "projects": "Projects",
+        "journey": "Journey",
+        "hobbies": "Hobbies",
         "contact": "Contact",
-        "downloadCv": "Download my CV",
-        "cvShort": "CV",
-        "home": "Back to top",
+        "cta": "Contact me",
+        "homeLabel": "Back to top",
         "mainNav": "Main navigation",
         "mobileNav": "Mobile navigation",
         "openMenu": "Open menu",
         "closeMenu": "Close menu",
-        "toggleTheme": "Toggle theme",
         "switchLanguage": "Switch language"
     },
     "Social": {
@@ -29,50 +28,60 @@
         "email": "Send an email"
     },
     "Hero": {
-        "badge": "Available for a full-time role – March 2027",
-        "role": "Software Engineer · IoT & Data",
-        "tagline": "From sensor to interface, I build fullstack, embedded and data solutions for innovative technology projects.",
+        "greeting": "Hi, I'm",
+        "followMe": "Follow me:",
         "ctaProjects": "View my projects",
-        "ctaContact": "Get in touch",
-        "scroll": "Go to the About section"
-    },
-    "About": {
-        "eyebrow": "About",
-        "title": "Software engineer, between code, sensors and data.",
-        "p1": "I graduated as a computer science engineer from Polytech Nantes (class of 2026) and am currently completing a Master 2 MAE EI at IGR Rennes, where I complement my technical expertise with training in entrepreneurship and innovation.",
-        "p2": "I master fullstack software development, embedded systems (IoT) and Data Science. Most recently, I designed an industrial edge-computing IoT solution on Raspberry Pi 5 that estimates animal weight through 3D vision.",
-        "p3": "I am looking for my first permanent position (CDI) starting March 2027, to contribute to the design of innovative technology projects, drawing on my project management and innovation skills.",
-        "pillars": {
-            "fullstack": {
-                "title": "Fullstack",
-                "text": "React, TypeScript, NestJS, Prisma and PostgreSQL to build complete web applications."
-            },
-            "iot": {
-                "title": "IoT & Embedded",
-                "text": "Edge computing on Raspberry Pi 5, STM32, LoRa, MQTT, 3D vision and containerized monitoring."
-            },
-            "data": {
-                "title": "Data & AI",
-                "text": "Machine Learning with Python, Pandas and Scikit-learn: scoring, prediction and decision support."
-            }
-        },
+        "downloadCv": "My CV",
+        "photoAlt": "Portrait of Saad Ait Bendra",
+        "techLabel": "Technologies I use",
         "stats": {
-            "experiences": "Experiences",
-            "projects": "Projects",
-            "domains": "Areas of expertise",
-            "languages": "Languages"
+            "experiences": "Professional and R&D experiences",
+            "projects": "Projects completed"
         }
     },
-    "Experience": {
-        "eyebrow": "Experience",
-        "title": "Professional experience & R&D",
-        "technologies": "Technologies used"
+    "Services": {
+        "badge": "Services",
+        "title": "What I <accent>can do</accent>",
+        "description": "From sensor to interface: the areas where I design, build and deliver.",
+        "items": {
+            "fullstack": {
+                "title": "Fullstack development",
+                "text": "Complete web applications with React, TypeScript, NestJS, Prisma and PostgreSQL, from the interface to the database."
+            },
+            "iot": {
+                "title": "IoT and edge computing",
+                "text": "Embedded solutions on Raspberry Pi 5 and STM32, with MQTT, WebSockets and Docker, InfluxDB and Grafana monitoring."
+            },
+            "vision": {
+                "title": "3D vision",
+                "text": "A C++ and OpenCV vision engine: 3D-to-2D projection, clustering and interactive 3D ROIs."
+            },
+            "data": {
+                "title": "Data and Machine Learning",
+                "text": "Scoring, prediction and decision support with Python, Pandas and Scikit-learn."
+            },
+            "rf": {
+                "title": "Radio and RF localization",
+                "text": "Detection and localization through spectrum analysis (RSSI, ToA, TDoA, AoA) with SDR and MATLAB, and LoRa systems."
+            },
+            "project": {
+                "title": "Project management",
+                "text": "Agile (Scrum), Jira and GitLab: scope, plan and deliver with the team."
+            }
+        }
     },
-    "Footer": {
-        "builtWith": "Built with Next.js, Tailwind CSS and React Three Fiber.",
-        "navLabel": "Footer navigation",
-        "backToTop": "Back to top",
-        "copyright": "© {year} {name}. All rights reserved."
+    "Skills": {
+        "badge": "Skills",
+        "title": "Skills that <accent>stand out</accent>",
+        "description": "Fullstack, embedded and data: a versatile profile, trained at Polytech Nantes then at IGR Rennes in entrepreneurship and innovation.",
+        "highlightsLabel": "Key skills",
+        "ringLabel": "professional and R&D experiences, from Nantes to Bucharest.",
+        "toolsBadge": "Tools",
+        "toolsTitle": "My expertise in <accent>tools</accent>",
+        "toolsNote": "The number shows how many of my projects use the tool.",
+        "projectsCount": "{count, plural, one {project} other {projects}}",
+        "stackBadge": "Stack",
+        "stackTitle": "My full <accent>stack</accent>"
     },
     "NotFound": {
         "title": "Page not found",

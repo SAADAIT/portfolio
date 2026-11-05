@@ -4,24 +4,28 @@
  */
 export const siteConfig = {
   name: "Saad Ait Bendra",
+  firstName: "Saad",
   shortName: "SAB",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
   email: "saadaitbendrafr@gmail.com",
   // TODO: replace with your real profile URLs
-  github: "https://github.com/saadaitbendra",
-  linkedin: "https://www.linkedin.com/in/saad-ait-bendra-5830061b7/",
+  github: "https://github.com/TODO",
+  linkedin: "https://www.linkedin.com/in/TODO",
   // TODO: put your real CV in /public/cv.pdf
   cvPath: "/cv.pdf",
   cvFileName: "CV-Saad-Ait-Bendra.pdf",
+  // TODO: cut-out portrait (transparent PNG) in /public/photo.png, then set "/photo.png"
+  photo: "/photo.png",
 } as const;
 
-/** Section ids, in page order. Used by the navbar, scroll spy and footer. */
+/** Section ids, in page order. Used by the navbar and the scroll spy. */
 export const navSections = [
-  "about",
-  "experience",
-  "projects",
+  "home",
+  "services",
   "skills",
-  "education",
+  "projects",
+  "journey",
+  "hobbies",
   "contact",
 ] as const;
 

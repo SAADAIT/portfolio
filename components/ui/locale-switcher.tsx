@@ -25,7 +25,7 @@ export function LocaleSwitcher() {
     <div
       role="group"
       aria-label={t("switchLanguage")}
-      className="glass inline-flex rounded-full p-0.5 text-xs font-medium"
+      className="inline-flex rounded-full border border-border bg-surface p-0.5 text-xs font-semibold"
     >
       {routing.locales.map((l) => (
         <button
@@ -36,9 +36,9 @@ export function LocaleSwitcher() {
           aria-pressed={l === locale}
           disabled={isPending}
           className={cn(
-            "rounded-full px-2.5 py-1.5 uppercase transition-colors",
+            "rounded-full px-3 py-1.5 uppercase transition-colors",
             l === locale
-              ? "bg-foreground text-background"
+              ? "bg-accent-gradient text-on-accent"
               : "text-muted hover:text-foreground",
           )}
         >

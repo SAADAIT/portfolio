@@ -11,7 +11,7 @@ export function Chip({ children, className }: ChipProps) {
   return (
     <span
       className={cn(
-        "inline-flex items-center gap-1.5 rounded-full border border-border bg-surface px-3 py-1 text-xs font-medium text-muted transition-colors hover:text-foreground",
+        "inline-flex items-center gap-1.5 rounded-full border border-border bg-surface px-3.5 py-1.5 text-xs font-medium text-foreground/80 transition-colors hover:border-accent-from/50 hover:text-foreground",
         className,
       )}
     >
