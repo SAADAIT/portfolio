@@ -128,3 +128,38 @@
         scroll-behavior: auto !important;
     }
 }
+
+
+/* ───────────── Hero (measured on the mockup) ───────────── */
+
+@utility bg-hero {
+    background: radial-gradient(34rem 26rem at 50% 40%, rgb(150 52 52 / 0.38), transparent 70%), radial-gradient(70rem 18rem at 50% 100%, rgb(190 40 120 / 0.28), transparent 70%), radial-gradient(30rem 24rem at 18% 40%, rgb(120 60 190 / 0.14), transparent 70%), radial-gradient(28rem 22rem at 84% 42%, rgb(110 60 200 / 0.14), transparent 70%), linear-gradient(180deg, #25162f 0%, #1d0f29 55%, #21102c 100%);
+}
+
+@keyframes float-y {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+@keyframes twinkle {
+    0%,
+    100% {
+        opacity: 0.35;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+@utility animate-float-y {
+    animation: float-y 6s ease-in-out infinite;
+}
+
+@utility animate-twinkle {
+    animation: twinkle 3.2s ease-in-out infinite;
+}

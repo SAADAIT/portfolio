@@ -1,15 +1,12 @@
-import { ArrowRight, Download } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 
-import { buttonStyles } from "@/components/ui/button";
-import { Chip } from "@/components/ui/chip";
-import { CountUp } from "@/components/ui/count-up";
+import { CircuitLines } from "@/components/hero/circuit-lines";
+import { IotScene } from "@/components/hero/iot-scene";
+import { HeroKeywords, SmartPanel } from "@/components/hero/smart-panel";
 import { ProfilePhoto } from "@/components/ui/profile-photo";
 import { Reveal } from "@/components/ui/reveal";
-import { SocialLinks } from "@/components/ui/social-links";
-import { heroStats, profile } from "@/data/profile";
+import { profile } from "@/data/profile";
 import { siteConfig } from "@/data/site";
-import { featuredStack } from "@/data/skills";
 import type { Locale } from "@/i18n/routing";
 
 export function Hero() {
@@ -20,100 +17,86 @@ export function Hero() {
     <section
       id="home"
       aria-labelledby="hero-title"
-      className="bg-hero-glow relative isolate overflow-hidden pt-28 pb-16 lg:pt-32"
+      className="bg-hero relative isolate flex min-h-svh items-center overflow-hidden pt-24 pb-12"
     >
-      <div className="mx-auto w-full max-w-6xl px-6">
-        <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-6">
-          {/* Left: pitch, actions and social links */}
-          <div className="order-2 lg:order-1 lg:col-span-3">
-            <Reveal>
-              <p className="leading-relaxed text-muted">
-                {profile.tagline[locale]}
-              </p>
-              <div className="mt-6 flex flex-wrap gap-3">
-                <a
-                  href="#projects"
-                  className={buttonStyles("primary", "px-5 py-2.5")}
-                >
-                  {t("ctaProjects")}
-                  <ArrowRight aria-hidden className="size-4" />
-                </a>
-                <a
-                  href={siteConfig.cvPath}
-                  download={siteConfig.cvFileName}
-                  className={buttonStyles("secondary", "px-5 py-2.5")}
-                >
-                  <Download aria-hidden className="size-4" />
-                  {t("downloadCv")}
-                </a>
-              </div>
-              <p className="mt-8 text-sm font-semibold">{t("followMe")}</p>
-              <SocialLinks className="mt-3" />
-            </Reveal>
+      <CircuitLines />
+
+      <div className="mx-auto grid w-full max-w-[96rem] items-center gap-8 px-4 lg:grid-cols-[1fr_1.3fr_1fr] xl:px-8">
+        {/* Left: IoT illustration */}
+        <IotScene className="hidden justify-self-start lg:block" />
+
+        {/* Center: portrait, ring and title */}
+        <div className="mx-auto w-full max-w-[34rem]">
+          {/* isolate: z-indexes below only stack inside this block */}
+          <div className="relative isolate mx-auto aspect-square w-full max-w-[28rem]">
+            {/* Gradient ring: behind the portrait, faded out below the shoulders */}
+            <svg
+              aria-hidden
+              viewBox="0 0 200 200"
+              className="absolute top-[16%] left-1/2 z-0 aspect-square w-[92%] -translate-x-1/2 overflow-visible [mask-image:linear-gradient(to_bottom,#000_48%,transparent_64%)]"
+            >
+              <defs>
+                <linearGradient id="ring-gradient" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0" stopColor="#ffa21f" />
+                  <stop offset="1" stopColor="#ff2d86" />
+                </linearGradient>
+                <filter id="ring-blur" x="-20%" y="-20%" width="140%" height="140%">
+                  <feGaussianBlur stdDeviation="3" />
+                </filter>
+              </defs>
+              <circle
+                cx="100"
+                cy="100"
+                r="98"
+                fill="none"
+                stroke="url(#ring-gradient)"
+                strokeWidth="3"
+                opacity="0.7"
+                filter="url(#ring-blur)"
+              />
+              <circle
+                cx="100"
+                cy="100"
+                r="98"
+                fill="none"
+                stroke="url(#ring-gradient)"
+                strokeWidth="1.2"
+              />
+            </svg>
+
+            <ProfilePhoto
+              fit="contain"
+              priority
+              sizes="(min-width: 1024px) 28rem, 90vw"
+              className="absolute inset-0 z-10 [mask-image:linear-gradient(to_bottom,#000_68%,transparent_97%)]"
+            />
           </div>
 
-          {/* Center: portrait with the title overlapping it */}
-          <div className="order-1 lg:order-2 lg:col-span-6">
-            <div className="relative mx-auto w-full max-w-xl">
-              <div
-                aria-hidden
-                className="bg-accent-gradient absolute bottom-0 left-1/2 h-[80%] w-[85%] -translate-x-1/2 rounded-full opacity-25 blur-[90px]"
-              />
-              <ProfilePhoto
-                fit="contain"
-                priority
-                sizes="(min-width: 1024px) 36rem, 90vw"
-                className="h-[22rem] w-full [mask-image:linear-gradient(to_bottom,#000_62%,transparent_100%)] sm:h-[30rem]"
-              />
-              {/* No entrance animation on the h1: it is the LCP element */}
-              <h1
-                id="hero-title"
-                className="relative z-10 -mt-16 text-center text-5xl leading-[1.08] font-extrabold sm:-mt-24 sm:text-6xl lg:text-7xl"
-              >
-                <span className="block">
-                  {t("greeting")} {siteConfig.firstName}
-                </span>
-                <span className="text-gradient block pb-2">
-                  {profile.role[locale]}
-                </span>
-              </h1>
-            </div>
-          </div>
+          {/* No entrance animation on the h1: it is the LCP element */}
+          <h1
+            id="hero-title"
+            className="relative z-20 -mt-12 text-center text-5xl font-extrabold text-white [text-shadow:0_4px_40px_rgba(0,0,0,0.55)] sm:-mt-16 sm:text-6xl xl:text-7xl"
+          >
+            {t("greeting")} {siteConfig.firstName}
+            <span className="sr-only">, {profile.role[locale]}</span>
+          </h1>
 
-          {/* Right: key figures */}
-          <div className="order-3 lg:col-span-3">
-            <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
-              {heroStats.map((stat, index) => (
-                <li key={stat.id}>
-                  <Reveal delay={0.1 + index * 0.1}>
-                    <div className="rounded-3xl border border-border bg-surface/80 p-6 backdrop-blur">
-                      <p className="text-5xl font-extrabold">
-                        <CountUp to={stat.value} className="text-gradient" />
-                      </p>
-                      <p className="mt-2 text-sm text-muted">
-                        {t(`stats.${stat.id}`)}
-                      </p>
-                    </div>
-                  </Reveal>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <div
+            aria-hidden
+            className="bg-accent-gradient mx-auto mt-5 h-1.5 w-56 rounded-full shadow-[0_0_24px_var(--glow)]"
+          />
+
+          <Reveal delay={0.1}>
+            {/* Hook: remove this paragraph to match the mockup exactly */}
+            <p className="mx-auto mt-6 max-w-md text-center text-muted">
+              {profile.tagline[locale]}
+            </p>
+            <HeroKeywords className="mt-8 lg:hidden" />
+          </Reveal>
         </div>
 
-        {/* Technologies strip */}
-        <Reveal delay={0.2}>
-          <ul
-            aria-label={t("techLabel")}
-            className="mt-16 flex flex-wrap justify-center gap-3"
-          >
-            {featuredStack.map((tech) => (
-              <li key={tech}>
-                <Chip className="px-5 py-2.5 text-sm">{tech}</Chip>
-              </li>
-            ))}
-          </ul>
-        </Reveal>
+        {/* Right: smart systems card, globe and key words */}
+        <SmartPanel className="hidden justify-self-end lg:flex" />
       </div>
     </section>
   );

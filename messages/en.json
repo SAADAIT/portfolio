@@ -29,14 +29,15 @@
     },
     "Hero": {
         "greeting": "Hi, I'm",
-        "followMe": "Follow me:",
-        "ctaProjects": "View my projects",
-        "downloadCv": "My CV",
         "photoAlt": "Portrait of Saad Ait Bendra",
-        "techLabel": "Technologies I use",
-        "stats": {
-            "experiences": "Professional and R&D experiences",
-            "projects": "Projects completed"
+        "smartTitle": "Smart Systems",
+        "smartTags": "IoT · Data · Innovation",
+        "keywordsLabel": "My areas of work",
+        "keywords": {
+            "connect": "Connect",
+            "analyze": "Analyze",
+            "automate": "Automate",
+            "innovate": "Innovate"
         }
     },
     "Services": {
