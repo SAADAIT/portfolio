@@ -30,38 +30,68 @@ export function Hero() {
           <div className="mx-auto w-full max-w-[34rem]">
             {/* isolate: z-indexes below only stack inside this block */}
             <div className="relative isolate mx-auto aspect-square w-full max-w-[28rem]">
-              {/* Gradient ring: behind the portrait, faded out below the shoulders */}
+              {/*
+                Neon ring behind the portrait. Measured on the mockup: it is
+                ~9% wider than the shoulders and centered at 60% of the box.
+                The drawing area is larger than the ring (viewBox -40 -40 280 280,
+                width 140%) so the glow is never cut off by the fade mask.
+              */}
               <svg
                 aria-hidden
-                viewBox="0 0 200 200"
-                className="absolute top-[16%] left-1/2 z-0 aspect-square w-[92%] -translate-x-1/2 overflow-visible [mask-image:linear-gradient(to_bottom,#000_48%,transparent_64%)]"
+                viewBox="-40 -40 280 280"
+                className="pointer-events-none absolute top-[-10%] left-1/2 z-0 aspect-square w-[140%] max-w-none -translate-x-1/2 [mask-image:linear-gradient(to_bottom,#000_53%,transparent_65%)]"
               >
                 <defs>
-                  <linearGradient id="ring-gradient" x1="0" y1="0" x2="1" y2="0">
-                    <stop offset="0" stopColor="#ffa21f" />
-                    <stop offset="1" stopColor="#ff2d86" />
+                  <linearGradient
+                    id="ring-gradient"
+                    gradientUnits="userSpaceOnUse"
+                    x1="2"
+                    y1="0"
+                    x2="198"
+                    y2="0"
+                  >
+                    <stop offset="0" stopColor="#ff9f2e" />
+                    <stop offset="0.42" stopColor="#ff7a2a" />
+                    <stop offset="0.58" stopColor="#f0207a" />
+                    <stop offset="1" stopColor="#f50f9c" />
                   </linearGradient>
-                  <filter id="ring-blur" x="-30%" y="-30%" width="160%" height="160%">
-                    <feGaussianBlur stdDeviation="4" />
+                  <filter id="ring-soft" x="-40%" y="-40%" width="180%" height="180%">
+                    <feGaussianBlur stdDeviation="6" />
+                  </filter>
+                  <filter id="ring-glow" x="-40%" y="-40%" width="180%" height="180%">
+                    <feGaussianBlur stdDeviation="2.4" />
                   </filter>
                 </defs>
+                {/* Wide soft halo */}
                 <circle
                   cx="100"
                   cy="100"
                   r="98"
                   fill="none"
                   stroke="url(#ring-gradient)"
-                  strokeWidth="6"
-                  opacity="0.85"
-                  filter="url(#ring-blur)"
+                  strokeWidth="8"
+                  opacity="0.95"
+                  filter="url(#ring-soft)"
                 />
+                {/* Tight glow */}
                 <circle
                   cx="100"
                   cy="100"
                   r="98"
                   fill="none"
                   stroke="url(#ring-gradient)"
-                  strokeWidth="2.2"
+                  strokeWidth="3.4"
+                  opacity="1"
+                  filter="url(#ring-glow)"
+                />
+                {/* Bright core */}
+                <circle
+                  cx="100"
+                  cy="100"
+                  r="98"
+                  fill="none"
+                  stroke="url(#ring-gradient)"
+                  strokeWidth="1.25"
                 />
               </svg>
 
