@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
+import { Inter, Sora } from "next/font/google";
 import { notFound } from "next/navigation";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import {
@@ -15,10 +15,19 @@ import "../globals.css";
 
 import { siteConfig } from "@/data/site";
 import { routing } from "@/i18n/routing";
+import { cn } from "@/lib/utils";
 
-const jakarta = Plus_Jakarta_Sans({
+// Body text
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-jakarta",
+  variable: "--font-inter",
+  display: "swap",
+});
+
+// Headings and big numbers
+const sora = Sora({
+  subsets: ["latin"],
+  variable: "--font-sora",
   display: "swap",
 });
 
@@ -100,7 +109,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
   const t = await getTranslations("A11y");
 
   return (
-    <html lang={locale} className={jakarta.variable}>
+    <html lang={locale} className={cn(inter.variable, sora.variable)}>
       <body className="min-h-dvh bg-background font-sans text-foreground antialiased">
         <NextIntlClientProvider messages={messages}>
           <a

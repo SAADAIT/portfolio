@@ -65,7 +65,7 @@ export function SmartPanel({ className }: { className?: string }) {
       </div>
 
       <div className="flex items-center">
-        <Earth className="aspect-[300/236] w-[17.5rem] shrink-0" />
+        <Earth className="-mx-7 -my-6 aspect-[320/290] w-[21rem] shrink-0" />
         <ul
           aria-label={t("keywordsLabel")}
           className="relative z-10 -ml-6 space-y-4"

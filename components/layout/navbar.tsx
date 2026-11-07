@@ -1,5 +1,6 @@
 "use client";
 
+import { Send } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
@@ -65,10 +66,10 @@ export function Navbar() {
         <a
           href="#home"
           aria-label={t("homeLabel")}
-          className="text-xl font-extrabold tracking-wide uppercase"
+          className="font-display text-xl font-extrabold tracking-wide uppercase"
         >
           {siteConfig.firstName}
-          <span className="text-gradient">.</span>
+          <span className="text-accent-from">.</span>
         </a>
 
         {/* Desktop navigation */}
@@ -105,6 +106,7 @@ export function Navbar() {
           <LocaleSwitcher />
           <a href="#contact" className={buttonStyles("primary", "px-5 py-2.5")}>
             {t("cta")}
+            <Send aria-hidden className="size-4" />
           </a>
         </div>
 
@@ -160,7 +162,7 @@ export function Navbar() {
                   onClick={() => setOpen(false)}
                   aria-current={active === id ? "location" : undefined}
                   className={cn(
-                    "rounded-lg py-2 text-2xl font-bold transition-colors",
+                    "rounded-lg py-2 font-display text-2xl font-bold transition-colors",
                     active === id ? "text-gradient" : "text-foreground",
                   )}
                 >
@@ -175,6 +177,7 @@ export function Navbar() {
                   className={buttonStyles("primary", "px-5 py-2.5")}
                 >
                   {t("cta")}
+                  <Send aria-hidden className="size-4" />
                 </a>
               </div>
             </nav>

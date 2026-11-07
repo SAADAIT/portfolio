@@ -28,7 +28,8 @@
         "email": "Send an email"
     },
     "Hero": {
-        "greeting": "Hi, I'm",
+        "greeting": "Hi, I’m",
+        "scroll": "Discover more",
         "photoAlt": "Portrait of Saad Ait Bendra",
         "smartTitle": "Smart Systems",
         "smartTags": "IoT · Data · Innovation",

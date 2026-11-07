@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-/* ───────────── Design tokens (measured on the reference) ───────────── */
+/* ───────────── Design tokens (measured on the references) ───────────── */
 
 :root {
     color-scheme: dark;
@@ -35,8 +35,9 @@
     --color-accent-to: var(--accent-to);
     --color-accent: var(--accent-text);
     --color-on-accent: var(--on-accent);
-    --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
-    --font-display: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+    /* Inter for text, Sora for headings */
+    --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+    --font-display: var(--font-sora), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
     --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -70,7 +71,8 @@
     h2,
     h3,
     h4 {
-        letter-spacing: -0.02em;
+        font-family: var(--font-display);
+        letter-spacing: -0.03em;
         text-wrap: balance;
     }
     p {
@@ -109,10 +111,74 @@
 }
 
 
-/* Soft glow behind the hero portrait */
+/* Hero backdrop measured on the mockup */
 
-@utility bg-hero-glow {
-    background: linear-gradient(180deg, #2f2336 0%, transparent 55%), radial-gradient(48rem 30rem at 50% 32%, rgb(255 45 134 / 0.16), transparent 65%), radial-gradient(34rem 24rem at 18% 72%, rgb(255 162 31 / 0.1), transparent 60%);
+@utility bg-hero {
+    background: radial-gradient(34rem 26rem at 50% 40%, rgb(150 52 52 / 0.38), transparent 70%), radial-gradient(70rem 18rem at 50% 100%, rgb(190 40 120 / 0.28), transparent 70%), radial-gradient(30rem 24rem at 18% 40%, rgb(120 60 190 / 0.14), transparent 70%), radial-gradient(28rem 22rem at 84% 42%, rgb(110 60 200 / 0.14), transparent 70%), linear-gradient(180deg, #25162f 0%, #1d0f29 55%, #21102c 100%);
+}
+
+
+/* ───────────── Animations ───────────── */
+
+
+/* One shared clock: every piece of the IoT scene moves on the same 6 s cycle,
+   each by its own distance (--lift), so the whole scene breathes in sync. */
+
+@keyframes breathe {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(var(--lift, -8px));
+    }
+}
+
+@keyframes beam {
+    0%,
+    100% {
+        opacity: 0.35;
+    }
+    50% {
+        opacity: 0.9;
+    }
+}
+
+@keyframes twinkle {
+    0%,
+    100% {
+        opacity: 0.35;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes rise-in {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@utility animate-breathe {
+    animation: breathe 6s ease-in-out infinite;
+}
+
+@utility animate-beam {
+    animation: beam 6s ease-in-out infinite;
+}
+
+@utility animate-twinkle {
+    animation: twinkle 3.2s ease-in-out infinite;
+}
+
+@utility animate-rise-in {
+    animation: rise-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 
@@ -127,39 +193,4 @@
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
     }
-}
-
-
-/* ───────────── Hero (measured on the mockup) ───────────── */
-
-@utility bg-hero {
-    background: radial-gradient(34rem 26rem at 50% 40%, rgb(150 52 52 / 0.38), transparent 70%), radial-gradient(70rem 18rem at 50% 100%, rgb(190 40 120 / 0.28), transparent 70%), radial-gradient(30rem 24rem at 18% 40%, rgb(120 60 190 / 0.14), transparent 70%), radial-gradient(28rem 22rem at 84% 42%, rgb(110 60 200 / 0.14), transparent 70%), linear-gradient(180deg, #25162f 0%, #1d0f29 55%, #21102c 100%);
-}
-
-@keyframes float-y {
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-8px);
-    }
-}
-
-@keyframes twinkle {
-    0%,
-    100% {
-        opacity: 0.35;
-    }
-    50% {
-        opacity: 1;
-    }
-}
-
-@utility animate-float-y {
-    animation: float-y 6s ease-in-out infinite;
-}
-
-@utility animate-twinkle {
-    animation: twinkle 3.2s ease-in-out infinite;
 }

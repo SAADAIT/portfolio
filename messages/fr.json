@@ -28,7 +28,8 @@
         "email": "Envoyer un email"
     },
     "Hero": {
-        "greeting": "Moi, c'est",
+        "greeting": "Moi, c’est",
+        "scroll": "Découvrir la suite",
         "photoAlt": "Portrait de Saad Ait Bendra",
         "smartTitle": "Systèmes intelligents",
         "smartTags": "IoT · Data · Innovation",
