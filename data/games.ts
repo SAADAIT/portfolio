@@ -20,7 +20,7 @@ export const games: readonly Game[] = [
     },
     tech: "Java · TeaVM",
     // Set NEXT_PUBLIC_GAME_TYPING_URL in .env.local and in the Vercel settings
-    url: process.env.NEXT_PUBLIC_GAME_TYPING_URL || "",
+    url: process.env.NEXT_PUBLIC_GAME_TYPING_URL || "https://typing-game-iota-eosin.vercel.app/",
   },
 ];
 
