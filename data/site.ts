@@ -19,6 +19,7 @@ export const siteConfig = {
 } as const;
 
 /** Section ids, in page order. Used by the navbar and the scroll spy. */
+
 export const navSections = [
   "home",
   "services",
@@ -26,10 +27,9 @@ export const navSections = [
   "projects",
   "journey",
   "hobbies",
+  "games",
   "contact",
 ] as const;
-
-export type NavSection = (typeof navSections)[number];
 
 export const socialLinks = [
   { id: "github", href: siteConfig.github },

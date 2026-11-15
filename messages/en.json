@@ -1,93 +1,120 @@
 {
-    "Meta": {
-        "title": "Saad Ait Bendra · Software Engineer, IoT & Data",
-        "description": "Polytech Nantes 2026 engineer (fullstack development, embedded IoT systems, Data Science), currently in a Master's at IGR Rennes. Discover my projects, skills and journey."
+  "Meta": {
+    "title": "Saad Ait Bendra · Software Engineer, IoT & Data",
+    "description": "Polytech Nantes 2026 engineer (fullstack development, embedded IoT systems, Data Science), currently in a Master's at IGR Rennes. Discover my projects, skills and journey."
+  },
+  "A11y": {
+    "skipLink": "Skip to main content"
+  },
+  "Nav": {
+    "GamesSection": {
+      "badge": "Games",
+      "title": "Play my <accent>games</accent>",
+      "description": "Small games I program myself, playable right in your browser.",
+      "play": "Play"
     },
-    "A11y": {
-        "skipLink": "Skip to main content"
+    "Games": {
+      "back": "Back to portfolio",
+      "hint": "Click inside the game to play with your keyboard.",
+      "builtWith": "Built with {tech}.",
+      "openNewTab": "Open in a new tab",
+      "notConfigured": "The game is not connected yet: set its address in the NEXT_PUBLIC_GAME_TYPING_URL variable, then restart the site."
     },
-    "Nav": {
-        "home": "Home",
-        "services": "Services",
-        "skills": "Skills",
-        "projects": "Projects",
-        "journey": "Journey",
-        "hobbies": "Hobbies",
-        "contact": "Contact",
-        "cta": "Contact me",
-        "homeLabel": "Back to top",
-        "mainNav": "Main navigation",
-        "mobileNav": "Mobile navigation",
-        "openMenu": "Open menu",
-        "closeMenu": "Close menu",
-        "switchLanguage": "Switch language"
-    },
-    "Social": {
-        "github": "GitHub profile",
-        "linkedin": "LinkedIn profile",
-        "email": "Send an email"
-    },
-    "Hero": {
-        "greeting": "Hi, I’m",
-        "scroll": "Discover more",
-        "photoAlt": "Portrait of Saad Ait Bendra",
-        "smartTitle": "Smart Systems",
-        "smartTags": "IoT · Data · Innovation",
-        "keywordsLabel": "My areas of work",
-        "keywords": {
-            "connect": "Connect",
-            "analyze": "Analyze",
-            "automate": "Automate",
-            "innovate": "Innovate"
-        }
-    },
-    "Services": {
-        "badge": "Services",
-        "title": "What I <accent>can do</accent>",
-        "description": "From sensor to interface: the areas where I design, build and deliver.",
-        "items": {
-            "fullstack": {
-                "title": "Fullstack development",
-                "text": "Complete web applications with React, TypeScript, NestJS, Prisma and PostgreSQL, from the interface to the database."
-            },
-            "iot": {
-                "title": "IoT and edge computing",
-                "text": "Embedded solutions on Raspberry Pi 5 and STM32, with MQTT, WebSockets and Docker, InfluxDB and Grafana monitoring."
-            },
-            "vision": {
-                "title": "3D vision",
-                "text": "A C++ and OpenCV vision engine: 3D-to-2D projection, clustering and interactive 3D ROIs."
-            },
-            "data": {
-                "title": "Data and Machine Learning",
-                "text": "Scoring, prediction and decision support with Python, Pandas and Scikit-learn."
-            },
-            "rf": {
-                "title": "Radio and RF localization",
-                "text": "Detection and localization through spectrum analysis (RSSI, ToA, TDoA, AoA) with SDR and MATLAB, and LoRa systems."
-            },
-            "project": {
-                "title": "Project management",
-                "text": "Agile (Scrum), Jira and GitLab: scope, plan and deliver with the team."
-            }
-        }
-    },
-    "Skills": {
-        "badge": "Skills",
-        "title": "Skills that <accent>stand out</accent>",
-        "description": "Fullstack, embedded and data: a versatile profile, trained at Polytech Nantes then at IGR Rennes in entrepreneurship and innovation.",
-        "highlightsLabel": "Key skills",
-        "ringLabel": "professional and R&D experiences, from Nantes to Bucharest.",
-        "toolsBadge": "Tools",
-        "toolsTitle": "My expertise in <accent>tools</accent>",
-        "toolsNote": "The number shows how many of my projects use the tool.",
-        "projectsCount": "{count, plural, one {project} other {projects}}",
-        "stackBadge": "Stack",
-        "stackTitle": "My full <accent>stack</accent>"
-    },
-    "NotFound": {
-        "title": "Page not found",
-        "description": "The page you are looking for doesn't exist or has been moved.",
-        "back": "Back to home"
+    "home": "Home",
+    "services": "Services",
+    "skills": "Skills",
+    "projects": "Projects",
+    "journey": "Journey",
+    "hobbies": "Hobbies",
+    "contact": "Contact",
+    "cta": "Contact me",
+    "homeLabel": "Back to top",
+    "mainNav": "Main navigation",
+    "mobileNav": "Mobile navigation",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "switchLanguage": "Switch language",
+    "games": "Games"
+  },
+  "Social": {
+    "github": "GitHub profile",
+    "linkedin": "LinkedIn profile",
+    "email": "Send an email"
+  },
+  "Hero": {
+    "greeting": "Hi, I’m",
+    "scroll": "Discover more",
+    "photoAlt": "Portrait of Saad Ait Bendra",
+    "smartTitle": "Smart Systems",
+    "smartTags": "IoT · Data · Innovation",
+    "keywordsLabel": "My areas of work",
+    "keywords": {
+      "connect": "Connect",
+      "analyze": "Analyze",
+      "automate": "Automate",
+      "innovate": "Innovate"
     }
+  },
+  "Services": {
+    "badge": "Services",
+    "title": "What I <accent>can do</accent>",
+    "description": "From sensor to interface: the areas where I design, build and deliver.",
+    "items": {
+      "fullstack": {
+        "title": "Fullstack development",
+        "text": "Complete web applications with React, TypeScript, NestJS, Prisma and PostgreSQL, from the interface to the database."
+      },
+      "iot": {
+        "title": "IoT and edge computing",
+        "text": "Embedded solutions on Raspberry Pi 5 and STM32, with MQTT, WebSockets and Docker, InfluxDB and Grafana monitoring."
+      },
+      "vision": {
+        "title": "3D vision",
+        "text": "A C++ and OpenCV vision engine: 3D-to-2D projection, clustering and interactive 3D ROIs."
+      },
+      "data": {
+        "title": "Data and Machine Learning",
+        "text": "Scoring, prediction and decision support with Python, Pandas and Scikit-learn."
+      },
+      "rf": {
+        "title": "Radio and RF localization",
+        "text": "Detection and localization through spectrum analysis (RSSI, ToA, TDoA, AoA) with SDR and MATLAB, and LoRa systems."
+      },
+      "project": {
+        "title": "Project management",
+        "text": "Agile (Scrum), Jira and GitLab: scope, plan and deliver with the team."
+      }
+    }
+  },
+  "Skills": {
+    "badge": "Skills",
+    "title": "Skills that <accent>stand out</accent>",
+    "description": "Fullstack, embedded and data: a versatile profile, trained at Polytech Nantes then at IGR Rennes in entrepreneurship and innovation.",
+    "highlightsLabel": "Key skills",
+    "ringLabel": "professional and R&D experiences, from Nantes to Bucharest.",
+    "toolsBadge": "Tools",
+    "toolsTitle": "My expertise in <accent>tools</accent>",
+    "toolsNote": "The number shows how many of my projects use the tool.",
+    "projectsCount": "{count, plural, one {project} other {projects}}",
+    "stackBadge": "Stack",
+    "stackTitle": "My full <accent>stack</accent>"
+  },
+  "NotFound": {
+    "title": "Page not found",
+    "description": "The page you are looking for doesn't exist or has been moved.",
+    "back": "Back to home"
+  },
+  "GamesSection": {
+    "badge": "Games",
+    "title": "Play my <accent>games</accent>",
+    "description": "Small games I program myself, playable right in your browser.",
+    "play": "Play"
+  },
+  "Games": {
+    "back": "Back to portfolio",
+    "hint": "Click inside the game to play with your keyboard.",
+    "builtWith": "Built with {tech}.",
+    "openNewTab": "Open in a new tab",
+    "notConfigured": "The game is not connected yet: set its address in the NEXT_PUBLIC_GAME_TYPING_URL variable, then restart the site."
+  }
 }

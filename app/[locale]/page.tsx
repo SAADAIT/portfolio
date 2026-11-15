@@ -1,6 +1,7 @@
 import { setRequestLocale } from "next-intl/server";
 
 import { Navbar } from "@/components/layout/navbar";
+import { Games } from "@/components/sections/games";
 import { Hero } from "@/components/sections/hero";
 import { Services } from "@/components/sections/services";
 import { Skills } from "@/components/sections/skills";
@@ -20,6 +21,7 @@ export default async function HomePage({ params }: PageProps) {
         <Hero />
         <Services />
         <Skills />
+        <Games />
         {/* Part 2: Projects, Journey, Hobbies, Contact */}
       </main>
     </>
